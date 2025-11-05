@@ -1,38 +1,78 @@
-.App {
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#001969, #1FA2FF);
+  
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+}
+.main {
+  width: 100%;
+  height: 100%;
+
+  display : flex;
+  justify-content: center;
+  align-items : center;
+}
+
+.calculator {
+  max-width: 668px;
+  max-height: 928px;
+  min-width: 460px;
+  min-height: 690px;
+  position: absolute;
+  top:5%;
+
+  background-color: #EDEDED;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  justify-content: center;
+  align-items : center;
+
+}
+.text-inputs {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  gap: 20px;
+  width: 90%;
+}
+
+.dropdown-inputs {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ox-inputs {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.calculate-btn {
+  width: 80%;
+  padding: 14px;
+  background-color: #141414;
+  color: #EDEDED;
+  font-size: 18px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.calculate-btn:hover {
+  background-color: #1FA2FF;
+}
+
+.calculate-btn:active {
+  transform: scale(0.98);
 }
