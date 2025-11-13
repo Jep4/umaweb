@@ -1,7 +1,11 @@
 from fastapi import FastAPI
 from motor.motor_asyncio import AsyncIOMotorClient
+from controller import router
 
 app = FastAPI()
+
+# controller 라우터 등록
+app.include_router(router)
 
 @app.get("/")
 def read_root():
