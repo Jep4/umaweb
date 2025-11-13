@@ -1,10 +1,10 @@
 import React from 'react';
 import './OXbtn.css'
 
-function OXbtn(name){
+function OXbtn({ label }){
     return(
         <div>
-            <label>c</label>
+            <label>{label}</label>
             <button>O</button>
             <button>X</button>
         </div>

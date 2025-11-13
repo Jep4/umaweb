@@ -1,6 +1,17 @@
+div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 80%;
+}
+
+label {
+  font-size: 16px;
+  white-space: nowrap;
+}
 
 input {
-  width: 80%;
+  flex: 1;
   padding: 2px;
   border: none;
   border-bottom:  2px solid #CACACA;;

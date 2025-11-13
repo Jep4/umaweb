@@ -1,10 +1,10 @@
 import React from 'react';
 import './Dropdown.css'
 
-function Dropdown(name){
+function Dropdown({ label }){
     return(
         <div>
-            <label>a</label>
+            <label>{label}</label>
             <select>
                 <option></option>
             </select>

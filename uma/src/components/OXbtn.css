@@ -1,5 +1,17 @@
+div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 80%;
+}
+
+label {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
 button {
-  width: 40%;
+  width: 194px;
   padding: 12px;
   font-size: 16px;
   border-radius: 8px;

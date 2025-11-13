@@ -9,19 +9,19 @@ function App() {
       <main className="main">
         <div className='calculator'>
             <div className='text-inputs'>
-              <Textinput></Textinput>
-              <Textinput></Textinput>
-              <Textinput></Textinput>
+              <Textinput label="입력1"></Textinput>
+              <Textinput label="입력2"></Textinput>
+              <Textinput label="입력3"></Textinput>
             </div>
             <div className='dropdown-inputs'>
-              <Dropdown></Dropdown>
-              <Dropdown></Dropdown>
-              <Dropdown></Dropdown>
-              <Dropdown></Dropdown>
+              <Dropdown label="선택1"></Dropdown>
+              <Dropdown label="선택2"></Dropdown>
+              <Dropdown label="선택3"></Dropdown>
+              <Dropdown label="선택4"></Dropdown>
             </div>
             <div className='ox-inputs'>
-              <OXbtn></OXbtn>
-              <OXbtn></OXbtn>
+              <OXbtn label="옵션1"></OXbtn>
+              <OXbtn label="옵션2"></OXbtn>
             </div>
             <button className='calculate-btn'>
               계산하기

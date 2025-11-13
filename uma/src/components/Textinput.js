@@ -2,10 +2,10 @@ import React from 'react';
 import './Textinput.css';
 
 
-function Textinput(name){
+function Textinput({ label }){
     return(
         <div>
-            <label>d</label>
+            <label>{label}</label>
             <input type='number'></input>
         </div>
     )
