@@ -2,55 +2,39 @@
   "dropdowns": [
     {
       "id": "select1",
-      "label": "팀 레벨",
+      "label": "팀레",
       "options": [
-        { "value": "1", "label": "레벨 1" },
-        { "value": "10", "label": "레벨 10" },
-        { "value": "20", "label": "레벨 20" },
-        { "value": "30", "label": "레벨 30" },
-        { "value": "40", "label": "레벨 40" },
-        { "value": "50", "label": "레벨 50" },
-        { "value": "60", "label": "레벨 60" },
-        { "value": "70", "label": "레벨 70" },
-        { "value": "80", "label": "레벨 80" },
-        { "value": "90", "label": "레벨 90" },
-        { "value": "100", "label": "레벨 100" }
+        { "value": "1", "label": "랭킹6 유지" },
+        { "value": "2", "label": "랭킹5 강등" },
+        { "value": "3", "label": "랭킹5 유지지" }
       ]
     },
     {
       "id": "select2",
-      "label": "챔피언 재료",
+      "label": "챔미",
       "options": [
         { "value": "0", "label": "0개" },
         { "value": "10", "label": "10개" },
-        { "value": "20", "label": "20개" },
-        { "value": "30", "label": "30개" },
-        { "value": "40", "label": "40개" },
-        { "value": "50", "label": "50개" },
-        { "value": "60", "label": "60개" },
-        { "value": "70", "label": "70개" },
-        { "value": "80", "label": "80개" },
-        { "value": "90", "label": "90개" },
-        { "value": "100", "label": "100개" }
+        { "value": "20", "label": "20개" }
       ]
     },
     {
       "id": "select3",
-      "label": "LOH 상태",
+      "label": "LOH",
       "options": [
-        { "value": "none", "label": "없음" },
-        { "value": "active", "label": "활성" },
-        { "value": "completed", "label": "완료" },
-        { "value": "pending", "label": "대기중" }
+        { "value": "1", "label": "플4" },
+        { "value": "2", "label": "플3" },
+        { "value": "3", "label": "플2" } ,
+        { "value": "3", "label": "플1" } 
       ]
     },
     {
       "id": "select4",
-      "label": "선택4",
+      "label": "서클 랭킹",
       "options": [
-        { "value": "option1", "label": "옵션 1" },
-        { "value": "option2", "label": "옵션 2" },
-        { "value": "option3", "label": "옵션 3" }
+        { "value": "option1", "label": "S" },
+        { "value": "option2", "label": "A+" },
+        { "value": "option3", "label": "A" }
       ]
     }
   ]

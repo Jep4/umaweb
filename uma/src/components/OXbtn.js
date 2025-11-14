@@ -13,19 +13,13 @@ function OXbtn({ label, value, onChange }){
             <label>{label}</label>
             <button 
                 onClick={() => handleClick(true)}
-                style={{ 
-                    backgroundColor: value === true ? '#141414' : '#f9f9f9',
-                    color: value === true ? 'white' : '#333'
-                }}
+                className={value === true ? 'selected' : ''}
             >
                 O
             </button>
             <button 
                 onClick={() => handleClick(false)}
-                style={{ 
-                    backgroundColor: value === false ? '#141414' : '#f9f9f9',
-                    color: value === false ? 'white' : '#333'
-                }}
+                className={value === false ? 'selected' : ''}
             >
                 X
             </button>

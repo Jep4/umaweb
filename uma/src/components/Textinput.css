@@ -2,24 +2,67 @@ div {
   display: flex;
   align-items: center;
   gap: 12px;
-  width: 80%;
+  width: 100%;
 }
 
 label {
+  min-width: 120px;
+  text-align: left;
   font-size: 16px;
   white-space: nowrap;
+  font-weight: 600;
+}
+
+.input-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 input {
   flex: 1;
   padding: 2px;
+  padding-right: 24px;
   border: none;
   border-bottom:  2px solid #CACACA;;
   font-size: 16px;
   background-color: transparent;
+  font-weight: 400;
 }
 
 input:focus {
   border-color: #444444;
   outline: none;
+}
+
+input::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+.clear-btn {
+  position: absolute;
+  right: 0;
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease;
+}
+
+.clear-btn:hover {
+  color: #666;
+}
+
+.clear-btn:active {
+  color: #333;
 }

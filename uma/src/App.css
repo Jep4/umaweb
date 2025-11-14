@@ -31,9 +31,9 @@ html, body {
 }
 
 .calculator {
-  max-width: 668px;
+  max-width: 500px;
   max-height: 928px;
-  min-width: 460px;
+  min-width: 330px;
   min-height: 690px;
 
   background-color: #EDEDED;
@@ -44,15 +44,16 @@ html, body {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   justify-content: center;
   align-items : center;
+  padding: 15px;
 
 }
 .text-inputs {
   display: flex;
   flex-direction: column;
   text-align: center;
-
   gap: 20px;
   width: 90%;
+  margin-bottom: 30px;
 }
 
 .dropdown-inputs {
@@ -61,14 +62,34 @@ html, body {
   width: 90%;
   gap: 20px;
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .ox-inputs {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  width: 100%;
+  width: 90%;
   justify-content: center;
+}
+
+.text-inputs > div,
+.dropdown-inputs > div,
+.ox-inputs > div {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.text-inputs label,
+.dropdown-inputs label,
+.ox-inputs label {
+  min-width: 120px;
+  text-align: left;
+  font-size: 16px;
+  white-space: nowrap;
+  font-weight: 600;
 }
 
 .calculate-btn {
@@ -81,6 +102,8 @@ html, body {
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
+  font-weight: 600;
+  margin-top: 10px;
 }
 
 .calculate-btn:hover {

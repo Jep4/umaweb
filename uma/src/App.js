@@ -3,19 +3,28 @@ import './App.css';
 import Textinput from './components/Textinput';
 import Dropdown from './components/Dropdown';
 import OXbtn from './components/OXbtn';
+import ResultScreen from './components/ResultScreen';
 import dropdownConfig from './config/dropdownConfig.json';
 
 const API_BASE_URL = 'http://localhost:8000';
 
 function App() {
+  const [showResult, setShowResult] = useState(false);
+  const [calculationResult, setCalculationResult] = useState('');
+  const [formData, setFormData] = useState({});
+
   const [input1, setInput1] = useState('');
   const [input2, setInput2] = useState('');
   const [input3, setInput3] = useState('');
 
-  const [select1, setSelect1] = useState('');
-  const [select2, setSelect2] = useState('');
-  const [select3, setSelect3] = useState('');
-  const [select4, setSelect4] = useState('');
+  const getFirstOptionValue = (options) => {
+    return options && options.length > 0 ? (options[0].value || options[0]) : '';
+  };
+
+  const [select1, setSelect1] = useState(getFirstOptionValue(dropdownConfig.dropdowns[0].options));
+  const [select2, setSelect2] = useState(getFirstOptionValue(dropdownConfig.dropdowns[1].options));
+  const [select3, setSelect3] = useState(getFirstOptionValue(dropdownConfig.dropdowns[2].options));
+  const [select4, setSelect4] = useState(getFirstOptionValue(dropdownConfig.dropdowns[3].options));
 
   const [option1, setOption1] = useState(null);
   const [option2, setOption2] = useState(null);
@@ -56,31 +65,69 @@ function App() {
       console.log('저장 결과:', result);
     } catch (error) {
       console.error('에러:', error);
-      alert('데이터 저장 중 오류가 발생했습니다: ' + error.message);
+      
     }
   };
 
   const handleCalculate = () => {
+    const data = {
+      targetDate: input1 || new Date().toISOString().split('T')[0].replace(/-/g, '/'),
+      currentJewels: parseInt(input2) || 0,
+      ticketCount: parseInt(input3) || 0,
+      ranking: select4 || '',
+      teamLevel: parseInt(select1) || 0,
+      championMaterial: parseInt(select2) || 0,
+      lohStatus: select3 || '',
+      jewelPack: option1,
+      tournamentEvent: option2
+    };
+    
+    setFormData(data);
+    
+    const result = calculateResult(data);
+    setCalculationResult(result);
+    setShowResult(true);
+    
     saveUserActivity();
+  };
+
+  const calculateResult = (data) => {
+    const result = Math.floor(Math.random() * 100) + 1;
+    return `${result}초`;
+  };
+
+  const handleRetry = () => {
+    setShowResult(false);
+    setCalculationResult('');
+    setFormData({});
   };
 
   return (
     <div className="App">
       <main className="main">
         <div className='calculator'>
+          {showResult ? (
+            <ResultScreen 
+              formData={formData}
+              result={calculationResult}
+              onRetry={handleRetry}
+            />
+          ) : (
+            <>
             <div className='text-inputs'>
               <Textinput 
-                label="입력1" 
+                label="목표 날짜" 
                 value={input1} 
                 onChange={setInput1}
+                placeholder="YYYY/MM/DD"
               />
               <Textinput 
-                label="입력2" 
+                label="현재 주얼" 
                 value={input2} 
                 onChange={setInput2}
               />
               <Textinput 
-                label="입력3" 
+                label="티켓" 
                 value={input3} 
                 onChange={setInput3}
               />
@@ -113,12 +160,12 @@ function App() {
             </div>
             <div className='ox-inputs'>
               <OXbtn 
-                label="옵션1" 
+                label="데일리 주얼팩" 
                 value={option1} 
                 onChange={setOption1}
               />
               <OXbtn 
-                label="옵션2" 
+                label="트레이닝 패스" 
                 value={option2} 
                 onChange={setOption2}
               />
@@ -126,6 +173,8 @@ function App() {
             <button className='calculate-btn' onClick={handleCalculate}>
               계산하기
             </button>
+            </>
+          )}
         </div>
       </main>
     </div>
