@@ -3,6 +3,7 @@ import './App.css';
 import Textinput from './components/Textinput';
 import Dropdown from './components/Dropdown';
 import OXbtn from './components/OXbtn';
+import dropdownConfig from './config/dropdownConfig.json';
 
 const API_BASE_URL = 'http://localhost:8000';
 
@@ -38,7 +39,7 @@ function App() {
         time_spent_seconds: 0
       };
 
-      const response = await fetch(`${API_BASE_URL}/user-activity`, {
+      const response = await fetch(`${API_BASE_URL}/api/user-activity`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -86,24 +87,28 @@ function App() {
             </div>
             <div className='dropdown-inputs'>
               <Dropdown 
-                label="선택1" 
+                label={dropdownConfig.dropdowns[0].label} 
                 value={select1} 
                 onChange={setSelect1}
+                options={dropdownConfig.dropdowns[0].options}
               />
               <Dropdown 
-                label="선택2" 
+                label={dropdownConfig.dropdowns[1].label} 
                 value={select2} 
                 onChange={setSelect2}
+                options={dropdownConfig.dropdowns[1].options}
               />
               <Dropdown 
-                label="선택3" 
+                label={dropdownConfig.dropdowns[2].label} 
                 value={select3} 
                 onChange={setSelect3}
+                options={dropdownConfig.dropdowns[2].options}
               />
               <Dropdown 
-                label="선택4" 
+                label={dropdownConfig.dropdowns[3].label} 
                 value={select4} 
                 onChange={setSelect4}
+                options={dropdownConfig.dropdowns[3].options}
               />
             </div>
             <div className='ox-inputs'>

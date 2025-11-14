@@ -6,24 +6,15 @@ from typing import Optional
 
 class UserActivity(BaseModel):
     target_date: datetime
-    target_date: datetime
-    
     current_jewels: int
     ticket_count: int
     ranking: Optional[int] = None
-    
     team_level: Optional[int] = None
     champion_material: Optional[int] = None
-
     loh_status: Optional[str] = None
     jewel_pack: bool
     tournament_event: bool
-    
     search_date: datetime
-    
-    # 다시하기 누른 횟수
     retry_count: int
-    
-    # 머문 시간
     time_spent_seconds: int 
     

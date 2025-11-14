@@ -34,4 +34,8 @@ async def create_user_activity(user_activity: UserActivity):
             "inserted_id": inserted_id
         }
     except Exception as e:
-        raise HTTPException(status_code=500, detail=f"데이터 저장 중 오류가 발생했습니다: {str(e)}")
+        import traceback
+        error_detail = f"데이터 저장 중 오류가 발생했습니다: {str(e)}"
+        print(f"Error: {error_detail}")
+        print(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=error_detail)
